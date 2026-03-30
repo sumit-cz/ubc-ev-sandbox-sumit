@@ -49,11 +49,11 @@ services:
     volumes:
       - ./otel-collector/config-bpp.yaml:/etc/otel/config.yaml:ro
     ports:
-      - "4321:4317"
-      - "4322:4318"
-      - "8890:8889"
-      - "13134:13133"
-      - "55680:55679"
+      - "4317:4317"
+      - "4318:4318"
+      - "8889:8889"
+      - "13133:13133"
+      - "55679:55679"
     networks:
       - onix-network
     restart: unless-stopped
