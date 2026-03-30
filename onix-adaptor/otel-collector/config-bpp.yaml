@@ -53,12 +53,6 @@ service:
       processors: [batch/traces]
       exporters: [otlp_grpc/jaeger]
 
-    # ALL audit logs (local storage)
-    logs:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: []
-
   telemetry:
     logs:
       level: info
