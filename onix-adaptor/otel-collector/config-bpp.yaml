@@ -32,6 +32,10 @@ exporters:
     tls:
       insecure: true
 
+  # Debug exporter for output
+  debug:
+    verbosity: detailed
+
 extensions:
   health_check:
     endpoint: 0.0.0.0:13133
@@ -52,6 +56,12 @@ service:
       receivers: [otlp]
       processors: [batch/traces]
       exporters: [otlp_grpc/jaeger]
+
+    # ALL logs -> debug exporter (debug output)
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug]
 
   telemetry:
     logs:
