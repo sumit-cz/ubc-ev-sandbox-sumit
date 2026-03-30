@@ -11,7 +11,7 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: http://mock-bpp:9002
+      url: https://bpphandler.chargecloud.net
       excludeAction: false
     endpoints:
       - discover
@@ -22,7 +22,7 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: http://mock-bpp:9002
+      url: https://bpphandler.chargecloud.net/bpp/receiver
       excludeAction: false
     endpoints:
       - select
@@ -34,4 +34,4 @@ routingRules:
       - update
       - rating
       - support
-
+      - on_catalog_publish

@@ -26,9 +26,11 @@ plugins:
   otelsetup:
     id: otelsetup
     config:
-      serviceName: "onix-ev-charging-bpp"
+      serviceName: "beckn-onix"
       serviceVersion: "1.0.0"
+      enableMetrics: "true"
       environment: "development"
+      metricsPort: "9004"
       domain: "ev_charging"
       otlpEndpoint: "otel-collector-bpp:4317"
       enableMetrics: "true"
@@ -50,7 +52,6 @@ modules:
     handler:
       type: std
       role: bpp
-      subscriberId: ev-charging.sandbox2.com
       httpClientConfig:
         maxIdleConns: 1000
         maxIdleConnsPerHost: 200
@@ -58,9 +59,10 @@ modules:
         responseHeaderTimeout: 5s
       plugins:
         registry:
-          id: registry
+          id: dediregistry
           config:
-            url: http://mock-registry:3030
+            url: https://api.beckn.one/registry/dedi
+            registryName: subscribers.beckn.one
             retry_max: 3
             retry_wait_min: 100ms
             retry_wait_max: 500ms
@@ -76,12 +78,12 @@ modules:
         keyManager:
           id: simplekeymanager
           config:
-            networkParticipant: ev-charging.sandbox2.com
-            keyId: bpp-key-1
-            signingPrivateKey: HH3KyEg4KhS8jVxPtEHMr6FTqyL0ef100vSPoZ2U0x4=
-            signingPublicKey: 2ja8jS4O/HhyfnTzgC81mXkNNAueeqGEhv42FJtoUv8=
-            encrPrivateKey: HH3KyEg4KhS8jVxPtEHMr6FTqyL0ef100vSPoZ2U0x4=
-            encrPublicKey: 2ja8jS4O/HhyfnTzgC81mXkNNAueeqGEhv42FJtoUv8=
+            networkParticipant: bpp-prod.chargecloud.net
+            keyId: 76EU7wN5rzP12Mt1mXM4hcPuwcPt27m5rFrcZsL968jWyiey4zhkTM
+            signingPrivateKey: YMUW3bvuDV1/I3e0mz8hNJtYPEfewbKcAiPFWEFOHZ4=
+            signingPublicKey: 7lCkO6xYjhmpWYn0sDqYjidi1DhZeS/KyJdH8oGn+YE=
+            encrPrivateKey: ANke6fcPBpor/EFCEqw6c3dM/WLJxoZ9Wqc/zoNvo80=
+            encrPublicKey: UxJPDCs/CIxRANMsln0sNplvM7NnVgPLq1LtpULK+3U=
         cache:
           id: cache
           config:
@@ -112,7 +114,6 @@ modules:
         - validateSign
         - addRoute
         - validateSchema
-
   # BPP Caller - Receives responses from backend via HTTP and sends HTTP
   # Phase 1: Receives on_discover from mock-bpp (HTTP) -> sends HTTP to mock-cds
   # Phase 2+: Receives other responses (on_select, on_init, etc.) from mock-bpp (HTTP) -> sends HTTP to BAP-ONIX plugin
@@ -121,7 +122,7 @@ modules:
     handler:
       type: std
       role: bpp
-      subscriberId: ev-charging.sandbox2.com
+      subscriberId: bpp-prod.chargecloud.net
       httpClientConfig:
         maxIdleConns: 1000
         maxIdleConnsPerHost: 200
@@ -129,9 +130,10 @@ modules:
         responseHeaderTimeout: 5s
       plugins:
         registry:
-          id: registry
+          id: dediregistry
           config:
-            url: http://mock-registry:3030
+            url: https://api.beckn.one/registry/dedi
+            registryName: subscribers.beckn.one
             retry_max: 3
             retry_wait_min: 100ms
             retry_wait_max: 500ms
@@ -147,12 +149,12 @@ modules:
         keyManager:
           id: simplekeymanager
           config:
-            networkParticipant: ev-charging.sandbox2.com
-            keyId: bpp-key-1
-            signingPrivateKey: HH3KyEg4KhS8jVxPtEHMr6FTqyL0ef100vSPoZ2U0x4=
-            signingPublicKey: 2ja8jS4O/HhyfnTzgC81mXkNNAueeqGEhv42FJtoUv8=
-            encrPrivateKey: HH3KyEg4KhS8jVxPtEHMr6FTqyL0ef100vSPoZ2U0x4=
-            encrPublicKey: 2ja8jS4O/HhyfnTzgC81mXkNNAueeqGEhv42FJtoUv8=
+            networkParticipant: bpp-prod.chargecloud.net
+            keyId: 76EU7wN5rzP12Mt1mXM4hcPuwcPt27m5rFrcZsL968jWyiey4zhkTM
+            signingPrivateKey: YMUW3bvuDV1/I3e0mz8hNJtYPEfewbKcAiPFWEFOHZ4=
+            signingPublicKey: 7lCkO6xYjhmpWYn0sDqYjidi1DhZeS/KyJdH8oGn+YE=
+            encrPrivateKey: ANke6fcPBpor/EFCEqw6c3dM/WLJxoZ9Wqc/zoNvo80=
+            encrPublicKey: UxJPDCs/CIxRANMsln0sNplvM7NnVgPLq1LtpULK+3U=
         cache:
           id: cache
           config:

@@ -9,8 +9,7 @@ log:
     - message_id
     - subscriber_id
     - module_id
-    - parent_id
- 
+    # - parent_id
 
 http:
   port: 8001
@@ -28,7 +27,7 @@ plugins:
     id: otelsetup
     config:
       serviceName: "onix-ev-charging-bap"
-      serviceVersion: "1.0.0"
+      serviceVersion: "v0.9.5"
       environment: "development"
       domain: "ev_charging"
       otlpEndpoint: "otel-collector-bap:4317"
@@ -106,8 +105,7 @@ modules:
         middleware:
           - id: reqpreprocessor
             config:
-              contextKeys: transaction_id,message_id,parent_id
-
+              contextKeys: transaction_id,message_id
               role: bap
       steps:
         - validateSign
@@ -179,7 +177,7 @@ modules:
         middleware:
           - id: reqpreprocessor
             config:
-              contextKeys: transaction_id,message_id,parent_id
+              contextKeys: transaction_id,message_id
               role: bap
       steps:
         - validateSchema

@@ -45,12 +45,13 @@ services:
   otel-collector-bpp:
     image: otel/opentelemetry-collector-contrib:latest
     container_name: otel-collector-bpp
-    command: ["--config=/etc/otelcol/config.yaml"]
+    command: ["--config=/etc/otel/config.yaml"]
     volumes:
-      - ./otel-config.yml:/etc/otelcol/config.yaml:ro
+      - ./otel-collector/config-bpp.yaml:/etc/otel/config.yaml:ro
     ports:
       - "4321:4317"
       - "4322:4318"
+      - "8890:8889"
       - "13134:13133"
       - "55680:55679"
     networks:

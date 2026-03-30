@@ -9,10 +9,11 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: http://mock-cds:8082/csd
+      url: https://cds.prod.ubc.nbsl.org.in/cds
       excludeAction: false
     endpoints:
       - on_discover
+      - catalog_publish
 
   # Phase 2+: Other responses from mock-bpp -> sends HTTP to BAP-ONIX plugin
   # Receives HTTP callbacks from mock-bpp and forwards to BAP plugin using bap_uri from context
@@ -29,5 +30,5 @@ routingRules:
       - on_cancel
       - on_update
       - on_rating
-      - on_support
-
+      - on_support  
+ 
