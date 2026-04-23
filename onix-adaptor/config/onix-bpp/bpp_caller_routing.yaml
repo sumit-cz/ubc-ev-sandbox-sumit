@@ -9,7 +9,7 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: https://cds.prod.ubc.nbsl.org.in/cds
+      url: https://uat-cds.ubc.nbsl.org.in/cds
       excludeAction: false
     endpoints:
       - on_discover

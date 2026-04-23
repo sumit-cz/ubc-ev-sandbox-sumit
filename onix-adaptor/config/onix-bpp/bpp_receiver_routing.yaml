@@ -11,7 +11,7 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: https://bpphandler.chargecloud.net
+      url: https://uat-bpphandler.chargecloud.net
       excludeAction: false
     endpoints:
       - discover
@@ -22,7 +22,7 @@ routingRules:
     version: "2.0.0"
     targetType: url
     target:
-      url: https://bpphandler.chargecloud.net/bpp/receiver
+      url: https://uat-bpphandler.chargecloud.net/bpp/receiver
       excludeAction: false
     endpoints:
       - select
