@@ -61,7 +61,7 @@ modules:
         registry:
           id: dediregistry
           config:
-            url: https://api.beckn.one/registry/dedi
+            url: https://api.testnet.beckn.one/dedi
             registryName: subscribers.beckn.one
             retry_max: 3
             retry_wait_min: 100ms
@@ -78,12 +78,12 @@ modules:
         keyManager:
           id: simplekeymanager
           config:
-            networkParticipant: bpp-prod.chargecloud.net
-            keyId: 76EU7wN5rzP12Mt1mXM4hcPuwcPt27m5rFrcZsL968jWyiey4zhkTM
-            signingPrivateKey: YMUW3bvuDV1/I3e0mz8hNJtYPEfewbKcAiPFWEFOHZ4=
-            signingPublicKey: 7lCkO6xYjhmpWYn0sDqYjidi1DhZeS/KyJdH8oGn+YE=
-            encrPrivateKey: ANke6fcPBpor/EFCEqw6c3dM/WLJxoZ9Wqc/zoNvo80=
-            encrPublicKey: UxJPDCs/CIxRANMsln0sNplvM7NnVgPLq1LtpULK+3U=
+            networkParticipant: bpp.chargecloud.net
+            keyId: 76EU9DEZprxkTBLUxhP6cGXw1SnZB1REhS6bd7JmHZYQjVtDkEPaQh
+            signingPrivateKey: UNAOtT7E3ZWD8g0mV8oDNwV4zMpKdvtftygU8GquBcE=
+            signingPublicKey: uHv0UDDQgQpgGFrAO2DTv3GAOzaOQFVx/IanqHEd/k4=
+            encrPrivateKey: 6XOZe8hoxCBYDeVXC9jsf/69j8zJOebeT5GGTsyZ4AI=
+            encrPublicKey: B7dIF80AwAOPjgutQv62OcePbL1WMnCJ0V8A/3NzCyw=
         cache:
           id: cache
           config:
@@ -122,7 +122,7 @@ modules:
     handler:
       type: std
       role: bpp
-      subscriberId: bpp-prod.chargecloud.net
+      subscriberId: bpp.chargecloud.net
       httpClientConfig:
         maxIdleConns: 1000
         maxIdleConnsPerHost: 200
@@ -149,12 +149,12 @@ modules:
         keyManager:
           id: simplekeymanager
           config:
-            networkParticipant: bpp-prod.chargecloud.net
-            keyId: 76EU7wN5rzP12Mt1mXM4hcPuwcPt27m5rFrcZsL968jWyiey4zhkTM
-            signingPrivateKey: YMUW3bvuDV1/I3e0mz8hNJtYPEfewbKcAiPFWEFOHZ4=
-            signingPublicKey: 7lCkO6xYjhmpWYn0sDqYjidi1DhZeS/KyJdH8oGn+YE=
-            encrPrivateKey: ANke6fcPBpor/EFCEqw6c3dM/WLJxoZ9Wqc/zoNvo80=
-            encrPublicKey: UxJPDCs/CIxRANMsln0sNplvM7NnVgPLq1LtpULK+3U=
+            networkParticipant: bpp.chargecloud.net
+            keyId: 76EU9DEZprxkTBLUxhP6cGXw1SnZB1REhS6bd7JmHZYQjVtDkEPaQh
+            signingPrivateKey: UNAOtT7E3ZWD8g0mV8oDNwV4zMpKdvtftygU8GquBcE=
+            signingPublicKey: uHv0UDDQgQpgGFrAO2DTv3GAOzaOQFVx/IanqHEd/k4=
+            encrPrivateKey: 6XOZe8hoxCBYDeVXC9jsf/69j8zJOebeT5GGTsyZ4AI=
+            encrPublicKey: B7dIF80AwAOPjgutQv62OcePbL1WMnCJ0V8A/3NzCyw=
         cache:
           id: cache
           config:
