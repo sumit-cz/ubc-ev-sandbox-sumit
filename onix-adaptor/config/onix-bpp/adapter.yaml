@@ -26,10 +26,10 @@ plugins:
   otelsetup:
     id: otelsetup
     config:
-      serviceName: "beckn-onix"
+      serviceName: "bpp-prod-chargecloud-net-otel"
       serviceVersion: "1.0.0"
       enableMetrics: "true"
-      environment: "development"
+      environment: "production"
       metricsPort: "9004"
       domain: "ev_charging"
       otlpEndpoint: "otel-collector-bpp:4317"
