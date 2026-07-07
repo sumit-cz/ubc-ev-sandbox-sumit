@@ -61,10 +61,10 @@ modules:
         registry:
           id: dediregistry
           config:
-            # url: https://api.testnet.beckn.one/dedi
+            #url: https://api.testnet.beckn.one/dedi
             url: https://fabric.nfh.global/registry/dedi
             registryName: subscribers.beckn.one
-            allowedNetworkIDs: "ubc.nbsl.org.in/NBSL_Prod_reference_registry"
+            allowedNetworkIDs: ubc.nbsl.org.in/NBSL_UAT_Reference_Registry
             timeout: 30
             retry_max: 3
             retry_wait_min: 1s
@@ -82,7 +82,7 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bpp.chargecloud.net
-            keyId: 76EU9DEZprxkTBLUxhP6cGXw1SnZB1REhS6bd7JmHZYQjVtDkEPaQh
+            keyId: 76EU8VWR1CVRahQh4KhT3uS2MAapfZCxCkvs2N9xFcWyMHEteUWwAk
             signingPrivateKey: UNAOtT7E3ZWD8g0mV8oDNwV4zMpKdvtftygU8GquBcE=
             signingPublicKey: uHv0UDDQgQpgGFrAO2DTv3GAOzaOQFVx/IanqHEd/k4=
             encrPrivateKey: 6XOZe8hoxCBYDeVXC9jsf/69j8zJOebeT5GGTsyZ4AI=
@@ -135,8 +135,9 @@ modules:
         registry:
           id: dediregistry
           config:
-            url: https://api.beckn.one/registry/dedi
+            url: https://fabric.nfh.global/registry/dedi
             registryName: subscribers.beckn.one
+            allowedNetworkIDs: ubc.nbsl.org.in/NBSL_UAT_Reference_Registry
             retry_max: 3
             retry_wait_min: 100ms
             retry_wait_max: 500ms
@@ -153,7 +154,7 @@ modules:
           id: simplekeymanager
           config:
             networkParticipant: bpp.chargecloud.net
-            keyId: 76EU9DEZprxkTBLUxhP6cGXw1SnZB1REhS6bd7JmHZYQjVtDkEPaQh
+            keyId: 76EU8VWR1CVRahQh4KhT3uS2MAapfZCxCkvs2N9xFcWyMHEteUWwAk
             signingPrivateKey: UNAOtT7E3ZWD8g0mV8oDNwV4zMpKdvtftygU8GquBcE=
             signingPublicKey: uHv0UDDQgQpgGFrAO2DTv3GAOzaOQFVx/IanqHEd/k4=
             encrPrivateKey: 6XOZe8hoxCBYDeVXC9jsf/69j8zJOebeT5GGTsyZ4AI=
@@ -188,5 +189,3 @@ modules:
         - validateSchema
         - addRoute
         - sign
-
-
