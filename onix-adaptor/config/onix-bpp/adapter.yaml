@@ -64,7 +64,7 @@ modules:
             # url: https://api.beckn.one/registry/dedi
             url: https://fabric.nfh.global/registry/dedi
             registryName: subscribers.beckn.one
-            # allowedNetworkIDs: "ubc.nbsl.org.in/NBSL_Prod_reference_registry"
+            allowedNetworkIDs: ubc.nbsl.org.in/NBSL_Prod_reference_registry
             timeout: 30
             retry_max: 3
             retry_wait_min: 1s
@@ -137,6 +137,7 @@ modules:
           config:
             url: https://api.beckn.one/registry/dedi
             registryName: subscribers.beckn.one
+            allowedNetworkIDs: ubc.nbsl.org.in/NBSL_Prod_reference_registry
             retry_max: 3
             retry_wait_min: 100ms
             retry_wait_max: 500ms
